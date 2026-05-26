@@ -278,6 +278,27 @@ My Ocean Place
 
 <label>Upload a photo (400 KB max. - photo will not display if larger)</label>
 <input type="file" id="photo" accept="image/*">
+
+<div style="
+  font-size:12px;
+  line-height:1.5;
+  color:#555;
+  margin:-4px 0 14px 0;
+  padding:10px 12px;
+  background:#f8f9fa;
+  border-radius:8px;
+">
+  By uploading a photo, you confirm that:
+  <ul style="padding-left:18px; margin:8px 0;">
+    <li>You own the image or have permission to share it</li>
+    <li>You have the consent of identifiable people shown in the image where required</li>
+    <li>MPA Day may use the image for communications and promotional purposes</li>
+  </ul>
+  Please include photographer credits where relevant.
+</div>
+
+<input id="photo_credit" placeholder="Photo credit (optional)">
+
 <img id="preview">
 
 <label>Choose your favourite marine marker</label>
@@ -579,6 +600,7 @@ async function saveEntry(){
   home_place:document.getElementById("home_place").value,
   sea_place:document.getElementById("sea_place").value,
   note:document.getElementById("note").value,
+  photo_credit:document.getElementById("photo_credit").value,  
   style:parseInt(document.getElementById("style").value),
   photo_url:photoURL,
   home_lat:homeLatLng.lat,
