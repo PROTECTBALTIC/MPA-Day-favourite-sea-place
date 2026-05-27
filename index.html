@@ -552,10 +552,11 @@ document.getElementById("photo").onchange=e=>{
 async function uploadPhoto(file){
  const fileName=Date.now()+"_"+file.name;
  const {error}=await supabaseClient.storage.from("mpa-day-sea-photos").upload(fileName,file);
- if(error){
-  console.error("Upload error",error);
+if(error){
+  console.error("Upload error", error);
+  alert("Upload failed: " + error.message);
   return null;
- }
+}
  const {data}=supabaseClient.storage.from("mpa-day-sea-photos").getPublicUrl(fileName);
  return data.publicUrl;
 }
