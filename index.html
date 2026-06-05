@@ -574,7 +574,7 @@ async function loadEntries(){
   L.polyline([home,sea],{color:"#1c7ed6",weight:3,opacity:0.6,dashArray:"8 8"}).addTo(lineLayer);
   let popup=`<b>${d.name||"Anonymous"}</b>`;
   if(d.home_place) popup+=`<br>Home: ${d.home_place}`;
-  if(d.sea_place) popup+=`<br>Sea place: ${d.sea_place}`;
+  if(d.sea_place) popup+=`<br>Ocean place: ${d.sea_place}`;
   popup+=`<br>${d.note||""}`;
   if(d.photo_url) popup+=`<br><img src="${d.photo_url}">`;
   seaMarker.bindPopup(popup);
